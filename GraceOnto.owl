@@ -1,0 +1,1538 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://mysemantic/grist-ontology#"
+     xml:base="http://mysemantic/grist-ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:ns1="http://rdfs.org/sioc/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://mysemantic/grist-ontology">
+        <owl:versionIRI rdf:resource="http://mysemantic/grist-ontology"/>
+        <owl:imports rdf:resource="http://mysemantic/core-ontology"/>
+        <owl:imports rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mysemantic/grist-ontology#assessment -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#assessment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#attached -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#attached">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#friendOf -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#friendOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#hasArtifact -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#hasArtifact"/>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#hasConsultant -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#hasConsultant">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#hasItem"/>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#hasProfile -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#hasProfile">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#related -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#related">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#store -->
+
+    <owl:ObjectProperty rdf:about="http://mysemantic/grist-ontology#store">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#about -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#about">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:comment xml:lang="en">Specifies that this Item is about a particular resource, e.g. a Post describing a book, hotel, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">about</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#account_of -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#account_of">
+        <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/account"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#creator_of -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#creator_of">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#has_creator"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#email -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#email">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">An electronic mail address of the UserAccount.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">email</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#follows -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#follows">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">Indicates that one UserAccount follows another UserAccount (e.g. for microblog posts or other content item updates).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_creator -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_creator">
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">This is the UserAccount that made this resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has creator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_member -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_member">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#member_of"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">A UserAccount that is a member of this Usergroup.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_moderator -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_moderator">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#moderator_of"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Forum"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">A UserAccount that is a moderator of this Forum.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has moderator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_owner -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_owner">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#owner_of"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">A UserAccount that this resource is owned by.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has owner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_reply -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_reply">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#related_to"/>
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#reply_of"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:comment xml:lang="en">Points to an Item or Post that is a reply or response to this Item or Post.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has reply</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#likes -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#likes">
+        <rdfs:comment xml:lang="en">Used to indicate some form of endorsement by a UserAccount or Agent of an Item, Container, Space, UserAccount, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">likes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#link -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#link">
+        <rdfs:comment xml:lang="en">A URI of a document which contains this SIOC object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">link</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#member_of -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#member_of"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#moderator_of -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#moderator_of"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#owner_of -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#owner_of"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#related_to -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#related_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">Related resources for this resource, e.g. for Posts, perhaps determined implicitly from topics or references.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">related to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#reply_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#reply_of">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#related_to"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:comment xml:lang="en">Links to an Item or Post which this Item or Post is a reply to.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">reply of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/account -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/account">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+        <rdfs:comment>Indicates an account held by this agent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>account</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A homepage for some thing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>homepage</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/interest -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/interest">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A page about a topic of interest to this person.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>interest</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/knows -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>A person known by this person (indicating some level of reciprocated interaction between the parties).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>knows</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/page">
+        <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/topic"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A page or document about this thing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>page</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/phone -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/phone">
+        <rdfs:comment>A phone,  specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>phone</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/topic -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/topic">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A topic of some page or document.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>topic</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/weblog -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/weblog">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A weblog of some thing (whether person, group, company etc.).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>weblog</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mysemantic/grist-ontology#assessedBy -->
+
+    <owl:DatatypeProperty rdf:about="http://mysemantic/grist-ontology#assessedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#createdBy -->
+
+    <owl:DatatypeProperty rdf:about="http://mysemantic/grist-ontology#createdBy"/>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#riskStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://mysemantic/grist-ontology#riskStatus"/>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#sensorID -->
+
+    <owl:DatatypeProperty rdf:about="http://mysemantic/grist-ontology#sensorID"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#name -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The name of a SIOC concept instance, e.g. a username for a UserAccount, group name for a Usergroup, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The age in years of some agent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>age</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/birthday -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/birthday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The birthday of this Agent, represented in mm-dd string form, eg. &apos;12-31&apos;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>birthday</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The first name of a person.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>firstName</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The gender of this Agent (typically but not necessarily &apos;male&apos; or &apos;female&apos;).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>gender</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The last name of a person.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>lastName</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>A name for some thing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>name</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/status -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/status">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>A string expressing what the user is happy for the general public (normally) to know about their current activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>status</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/title -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/title">
+        <rdfs:comment>Title (Mr, Mrs, Ms, Dr. etc)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>title</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mysemantic/grist-ontology#AssessmentDB -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#AssessmentDB">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#GristResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#AssessmentDoc -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#AssessmentDoc">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#GristResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#CarePolicyDoc -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#CarePolicyDoc">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#WebResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#Carer -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#Carer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#Doctor -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#Doctor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#Family -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#Family">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#GristResource -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#GristResource">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#SoftArtifact"/>
+        <owl:disjointWith rdf:resource="http://mysemantic/grist-ontology#WebResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#HeartSensor -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#HeartSensor">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#SensorDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#MentalHealthCommunity -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#MentalHealthCommunity">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Community"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#Patient -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#Patient">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#SensorDevice -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#SensorDevice">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#TreatmentPlan -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#TreatmentPlan">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#GristResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#WebResource -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#WebResource">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#SoftArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#Website -->
+
+    <owl:Class rdf:about="http://mysemantic/grist-ontology#Website">
+        <rdfs:subClassOf rdf:resource="http://mysemantic/grist-ontology#WebResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Community -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Community">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Role"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">Community is a high-level concept that defines an online community and what it consists of.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Community</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Container -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Container">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Role"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+        <rdfs:comment xml:lang="en">An area in which content Items are contained.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Forum -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Forum">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:comment xml:lang="en">A discussion area on which Posts or entries are made.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Forum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Item -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Item">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Role"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+        <rdfs:comment xml:lang="en">An Item is something which can be in a Container.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Post -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Post">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment xml:lang="en">An article or message that can be posted to a Forum.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Post</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Role -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#Role">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Site -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Site">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+        <rdfs:comment xml:lang="en">A Site can be the location of an online community or set of communities, with UserAccounts and Usergroups creating Items in a set of Containers. It can be thought of as a web-accessible data Space.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Space -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Space">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+        <rdfs:comment xml:lang="en">A Space is a place where data resides, e.g. on a website, desktop, fileshare, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#User -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#User">
+        <owl:equivalentClass rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#UserAccount -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#UserAccount">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+        <rdfs:comment xml:lang="en">A user account in an online community site.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">User Account</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Usergroup -->
+
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#Usergroup"/>
+    
+
+
+    <!-- http://schema.org/CreativeWork -->
+
+    <rdf:Description rdf:about="http://schema.org/CreativeWork">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/ImageObject -->
+
+    <rdf:Description rdf:about="http://schema.org/ImageObject">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#CollaborationArtifact -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#CollaborationArtifact"/>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#HumanEntity -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#HumanEntity"/>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#NonHumanEntity -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#NonHumanEntity"/>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#PhysicalObject"/>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#SocialObject -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#SocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#NonHumanEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mysemantic/core-ontology#SoftArtifact -->
+
+    <owl:Class rdf:about="http://www.mysemantic/core-ontology#SoftArtifact"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#HumanEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#SocialObject"/>
+        <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:comment>A document.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>Document</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Image -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Image">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>An image.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>Image</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/OnlineAccount -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/OnlineAccount">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>An online account.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>Online Account</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/PersonalProfileDocument -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/PersonalProfileDocument">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment>A personal profile RDF document.</rdfs:comment>
+        <rdfs:label>PersonalProfileDocument</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Project -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Project">
+        <rdfs:subClassOf rdf:resource="http://www.mysemantic/core-ontology#SocialObject"/>
+        <rdfs:comment>A project (a collective endeavour of some kind).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>Project</rdfs:label>
+        <ns:term_status>testing</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mysemantic/grist-ontology#account1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#account1">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#patient1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#account2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#account2">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#doctor1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#account3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#account3">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#db1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#account4 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#account4">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#heartsensor1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#account5 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#account5">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#policydoc1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#assessmentdoc1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#assessmentdoc1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#AssessmentDoc"/>
+        <related rdf:resource="http://mysemantic/grist-ontology#patient3"/>
+        <store rdf:resource="http://mysemantic/grist-ontology#db1"/>
+        <assessedBy>Dr. Andrew Garfiled</assessedBy>
+        <createdBy>Jemmie Lee</createdBy>
+        <riskStatus>Medium</riskStatus>
+        <terms:date>submitted on 31/03/2019</terms:date>
+        <terms:description>The health assessment document contain information about patient Jemmie Lee who is suffering from recent sucide tendency</terms:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#assessmentdoc2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#assessmentdoc2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#AssessmentDoc"/>
+        <store rdf:resource="http://mysemantic/grist-ontology#db1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#bookmark1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#bookmark1">
+        <rdf:type rdf:resource="http://mysemantic/core-ontology#Bookmark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#bookmark2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#bookmark2">
+        <rdf:type rdf:resource="http://mysemantic/core-ontology#Bookmark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#carer1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#carer1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Carer"/>
+        <ns1:follows rdf:resource="http://mysemantic/grist-ontology#doctor3"/>
+        <foaf:knows rdf:resource="http://mysemantic/grist-ontology#patient3"/>
+        <terms:description>Perinatal Specialist Mental Health Nurse</terms:description>
+        <terms:title>Nurse</terms:title>
+        <foaf:firstName>Lacey</foaf:firstName>
+        <foaf:lastName>Beeman</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#carer2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#carer2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Carer"/>
+        <ns1:follows rdf:resource="http://mysemantic/grist-ontology#doctor2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#carer3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#carer3">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Carer"/>
+        <ns1:follows rdf:resource="http://mysemantic/grist-ontology#doctor2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#community1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#community1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#MentalHealthCommunity"/>
+        <foaf:member rdf:resource="http://mysemantic/grist-ontology#carer3"/>
+        <foaf:member rdf:resource="http://mysemantic/grist-ontology#doctor1"/>
+        <foaf:member rdf:resource="http://mysemantic/grist-ontology#doctor3"/>
+        <foaf:member rdf:resource="http://mysemantic/grist-ontology#patient1"/>
+        <foaf:member rdf:resource="http://mysemantic/grist-ontology#patient3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#community2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#community2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#MentalHealthCommunity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#db1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#db1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#AssessmentDB"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#dbprofile1"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#account3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#dbprofile1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#dbprofile1"/>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#doctor1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#doctor1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Doctor"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile1"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#account2"/>
+        <foaf:knows rdf:resource="http://mysemantic/grist-ontology#family1"/>
+        <foaf:made rdf:resource="http://mysemantic/grist-ontology#treatmentplan1"/>
+        <terms:description>Specialist Mental Health Mentor</terms:description>
+        <terms:title>Dr</terms:title>
+        <foaf:firstName>David</foaf:firstName>
+        <foaf:lastName>Fincher</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#doctor2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#doctor2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Doctor"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#patient1"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile2"/>
+        <foaf:knows rdf:resource="http://mysemantic/grist-ontology#carer2"/>
+        <foaf:made rdf:resource="http://mysemantic/grist-ontology#treatmentplan2"/>
+        <terms:description>Health Improvement Practitioner - Healthy Lifestyles</terms:description>
+        <terms:title>Dr.</terms:title>
+        <foaf:firstName>Andrew</foaf:firstName>
+        <foaf:lastName>Garfield</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#doctor3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#doctor3">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Doctor"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile3"/>
+        <terms:description>Primary Care Mental Health Counsellor</terms:description>
+        <terms:title>Dr.</terms:title>
+        <foaf:firstName>Pamela</foaf:firstName>
+        <foaf:lastName>Jones</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#family1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#family1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Family"/>
+        <foaf:knows rdf:resource="http://mysemantic/grist-ontology#doctor1"/>
+        <terms:title>Mr.</terms:title>
+        <foaf:firstName>Peter</foaf:firstName>
+        <foaf:lastName>Holden</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#family2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#family2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Family"/>
+        <foaf:knows rdf:resource="http://mysemantic/grist-ontology#carer3"/>
+        <terms:title>Mrs.</terms:title>
+        <foaf:firstName>Caitlin</foaf:firstName>
+        <foaf:lastName>Gerard</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#forum1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#forum1">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Forum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#forum2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#forum2">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Forum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#heartsensor1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#heartsensor1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#HeartSensor"/>
+        <attached rdf:resource="http://mysemantic/grist-ontology#patient3"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#sensorprofile1"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#account4"/>
+        <sensorID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112</sensorID>
+        <foaf:name>Digital Heart Rate monitor</foaf:name>
+        <foaf:status>Active</foaf:status>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#medlineweb -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#medlineweb">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Website"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#patient1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#patient1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Patient"/>
+        <assessment rdf:resource="http://mysemantic/grist-ontology#assessmentdoc2"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#carer3"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#doctor2"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#family1"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#patient3"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile4"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#account1"/>
+        <terms:description>Experience some anxiety while coping with stressful events or changes</terms:description>
+        <terms:title>Mr</terms:title>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</foaf:age>
+        <foaf:firstName>John</foaf:firstName>
+        <foaf:gender>Male</foaf:gender>
+        <foaf:lastName>Dale</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#patient2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#patient2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Patient"/>
+        <assessment rdf:resource="http://mysemantic/grist-ontology#assessmentdoc2"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#carer2"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#doctor2"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#family2"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile5"/>
+        <terms:description>Suffering from seasonal affective disorder (SAD) at a particular time of year or during a particular season</terms:description>
+        <terms:title>Mrs</terms:title>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</foaf:age>
+        <foaf:firstName>Ann</foaf:firstName>
+        <foaf:gender>Female</foaf:gender>
+        <foaf:lastName>Preston</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#patient3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#patient3">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#Patient"/>
+        <friendOf rdf:resource="http://mysemantic/grist-ontology#patient2"/>
+        <hasConsultant rdf:resource="http://mysemantic/grist-ontology#doctor2"/>
+        <hasProfile rdf:resource="http://mysemantic/grist-ontology#profile6"/>
+        <terms:description>The patient suffers from sucide tendency</terms:description>
+        <terms:title>Mr</terms:title>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</foaf:age>
+        <foaf:firstName>Jammie</foaf:firstName>
+        <foaf:gender>Male</foaf:gender>
+        <foaf:lastName>Lee</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#policydoc1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#policydoc1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#CarePolicyDoc"/>
+        <ns1:link rdf:resource="http://mysemantic/grist-ontology#medlineweb"/>
+        <foaf:holdsAccount rdf:resource="http://mysemantic/grist-ontology#account5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#post1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#post1">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#post2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#post2">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#post3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#post3">
+        <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile1">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile2">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile3 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile3">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile4 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile4">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile5 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile5">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#profile6 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#profile6">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#sensorprofile1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#sensorprofile1">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#tag1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#tag1">
+        <rdf:type rdf:resource="http://mysemantic/core-ontology#Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#tag2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#tag2">
+        <rdf:type rdf:resource="http://mysemantic/core-ontology#Tag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#treatmentplan1 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#treatmentplan1">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#TreatmentPlan"/>
+        <related rdf:resource="http://mysemantic/grist-ontology#patient1"/>
+        <ns1:follows rdf:resource="http://mysemantic/grist-ontology#db1"/>
+        <createdBy>Dr. Fincher David</createdBy>
+        <terms:description>Patient should follow procudes described in this document</terms:description>
+        <terms:title>Treatment plan for patient Mr John Dale</terms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://mysemantic/grist-ontology#treatmentplan2 -->
+
+    <owl:NamedIndividual rdf:about="http://mysemantic/grist-ontology#treatmentplan2">
+        <rdf:type rdf:resource="http://mysemantic/grist-ontology#TreatmentPlan"/>
+        <ns1:follows rdf:resource="http://mysemantic/grist-ontology#db1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns# -->
+
+    <owl:Thing rdf:about="http://rdfs.org/sioc/ns#">
+        <terms:description xml:lang="en">SIOC (Semantically-Interlinked Online Communities) is an ontology for describing the information in online communities. 
+This information can be used to export information from online communities and to link them together. The scope of the application areas that SIOC can be used for includes (and is not limited to) weblogs, message boards, mailing lists and chat channels.</terms:description>
+        <terms:title xml:lang="en">SIOC Core Ontology Namespace</terms:title>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#AssessmentDB"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#AssessmentDoc"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#TreatmentPlan"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#Carer"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#Doctor"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#Family"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#Patient"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#assessmentdoc1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#assessmentdoc2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#bookmark1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#bookmark2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#carer1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#carer2"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#carer3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#community1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#community2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#doctor1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#doctor2"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#doctor3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#family1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#family2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient2"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#patient3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#tag1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#tag2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#treatmentplan1"/>
+            <rdf:Description rdf:about="http://mysemantic/grist-ontology#treatmentplan2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+
