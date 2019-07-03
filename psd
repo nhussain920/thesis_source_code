@@ -1,0 +1,402 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+<xs:element name="PolicySet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AAPolicy" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="GlobalPolicy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="AAPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ManagedResourceList" minOccurs="0"/>
+        <xs:element ref="SocialNetwork" minOccurs="0"/>
+        <xs:element ref="AA"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="policyID" use="required"/>
+      <xs:attribute type="xs:string" name="policyType" use="required"/>
+      <xs:attribute type="xs:string" name="policyDescription" use="optional"/>
+      <xs:attribute type="xs:string" name="ref_aa" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ManagedResourceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ManagedResource" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ManagedResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TriggerEvent"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="resourceID" use="required"/>
+      <xs:attribute type="xs:string" name="resourceType" use="required"/>
+      <xs:attribute type="xs:string" name="ref_sensor" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="TriggerEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="and" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:element ref="or" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:element ref="not" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="Event">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="inputEvent" use="required"/>
+          <xs:attribute type="xs:string" name="op" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="SocialNetwork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="NetworkResourceList"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="networkID" use="required"/>
+      <xs:attribute type="xs:string" name="networkName" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="NetworkResourceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="NetworkResource"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="NetworkResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TriggerEvent"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="resourceID" use="required"/>
+      <xs:attribute type="xs:string" name="resourceType" use="required"/>
+      <xs:attribute type="xs:string" name="ref_sensor" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="AA">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="SensorList" minOccurs="0"/>
+        <xs:element ref="Monitor" minOccurs="0"/>
+        <xs:element ref="LocalRIE" minOccurs="0"/>
+        <xs:element ref="Executor" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="adapterID" use="required"/>
+      <xs:attribute type="xs:string" name="adapterType" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="SensorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Sensor" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Sensor">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="sensorID" use="required"/>
+          <xs:attribute type="xs:string" name="sensorType" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Monitor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GetSensorData" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="Condition"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="monitorID" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="GetSensorData">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="ref_sensor" use="required"/>
+          <xs:attribute type="xs:string" name="ref_event" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="LocalRIE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GetMonitorData"/>
+        <xs:element ref="Condition"/>
+        <xs:element ref="TriggerAction"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="rieID" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="GetMonitorData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GetContextVariable" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="ref_monitor" use="required"/>
+      <xs:attribute type="xs:string" name="ref_condition" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="GetContextVariable">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="contextID" use="required"/>
+          <xs:attribute type="xs:string" name="ref_expression" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="TriggerAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="While" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="ref_condition" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="While">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ActionTemplate"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="condition" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ActionTemplate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="actionID" use="required"/>
+          <xs:attribute type="xs:string" name="actionType" use="required"/>
+          <xs:attribute type="xs:string" name="category" use="optional"/>
+          <xs:attribute type="xs:string" name="target_resource" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Executor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GetNotification"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="executorID" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="GetNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Execute" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="message" use="required"/>
+      <xs:attribute type="xs:string" name="ref_sender" use="required"/>
+    </xs:complexType>
+  </xs:element>
+   
+  <xs:element name="Execute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Function"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="action" use="required"/>
+      <xs:attribute type="xs:string" name="ref_command" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+ <xs:element name="Function">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Parameter" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="functionID" use="required"/>
+      <xs:attribute type="xs:string" name="functionName" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="Parameter">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="paramName" use="required"/>
+          <xs:attribute type="xs:string" name="datavalue" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+    
+  <xs:element name="GlobalPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GlobalRIE"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="GlobalRIE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ActionList"/>
+        <xs:element ref="Condition"/>
+        <xs:element ref="Decision" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="rieID" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="ActionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GetAction" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ 
+ <xs:element name="GetAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="and" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:element ref="or" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:element ref="not" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="ref_aa" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Action">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="inputActionID" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+ 
+  <xs:element name="Decision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Command" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="ref_condition" use="required"/>
+      <xs:attribute type="xs:string" name="ref_expression" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+
+  <xs:element name="Command">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="commandID" use="required"/>
+          <xs:attribute type="xs:string" name="message" use="required"/>
+          <xs:attribute type="xs:string" name="target_adapter" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="Condition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Expression" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="conditionID" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="Expression">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="If" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="and" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="or" minOccurs="0"/>
+        <xs:element ref="not" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="exprID" use="required"/>
+      <xs:attribute type="xs:string" name="ref_event" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="If">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="varName" use="required"/>
+          <xs:attribute type="xs:string" name="op" use="required"/>
+		  <xs:attribute type="xs:string" name="datavalue" use="optional"/>
+          <xs:attribute type="xs:string" name="ref_context" use="optional"/>
+          <xs:attribute type="xs:string" name="ref_input_action" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="and">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="If" minOccurs="0"/>
+		<xs:element ref="Event" minOccurs="0"/>
+        <xs:element ref="Action" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="or">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="If" minOccurs="0"/>
+		<xs:element ref="Event" minOccurs="0"/>
+        <xs:element ref="Action" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="not">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="If" minOccurs="0"/>
+		<xs:element ref="Event" minOccurs="0"/>
+        <xs:element ref="Action" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

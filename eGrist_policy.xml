@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PolicySet xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.aapolicyschema.com/ policy.xsd">
+	<!-- Define Events Handle by AA1 Policy -->
+	<AAPolicy policyID="p1" policyType="depression" policyDescription="carer's medium help intervention" ref_aa="aa1">	
+		<ManagedResourceList>
+			<ManagedResource resourceID="mr1" resourceType="depression-status" ref_sensor="s1">
+				<TriggerEvent>
+					<or><Event inputEvent="depression-status" op="="> first-diagnosis </Event></or>
+					<or><Event inputEvent="depression-status" op="="> recovery-single-episode </Event></or>
+					<or><Event inputEvent="depression-status" op="="> recovery-repeat-episode </Event></or>
+					<or><Event inputEvent="depression-status" op="="> relapse </Event></or>
+					<or><Event inputEvent="depression-status" op="="> dont-know </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr2" resourceType="act-on-voices" ref_sensor="s2">
+				<TriggerEvent>
+					<or><Event inputEvent="act-on-voices" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="act-on-voices" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr3" resourceType="voice-urge-harm-self" ref_sensor="s3">
+				<TriggerEvent>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr4" resourceType="voice-urge-harm-other" ref_sensor="s4">
+				<TriggerEvent>
+					<or><Event inputEvent="voice-urge-harm-other" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-other" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="voice-urge-harm-self" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr5" resourceType="delusions" ref_sensor="s5">
+				<TriggerEvent>
+					<or><Event inputEvent="delusions" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="delusions" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+		</ManagedResourceList>
+		
+		<!-- Social network entities may also generate event if action sent to the network -->
+		<SocialNetwork networkID="network1" networkName="grace-care-network">
+			<NetworkResourceList>
+				<NetworkResource resourceID="" resourceType="" ref_sensor="">
+					<TriggerEvent>
+						<or><Event inputEvent="" op="="></Event></or>
+					</TriggerEvent>
+				</NetworkResource>
+			</NetworkResourceList>
+		</SocialNetwork>
+		
+		<!-- Configure AA1 components -->
+		<AA adapterID="aa1" adapterType="depression-concept-adapter">	
+			<SensorList>
+				<Sensor sensorID="s1" sensorType="depression-status-sensor" />
+				<Sensor sensorID="s2" sensorType="act-on-voices-sensor" />
+				<Sensor sensorID="s3" sensorType="voice-urge-harm-self-sensor" />
+				<Sensor sensorID="s4" sensorType="voice-urge-harm-others-sensor" />
+				<Sensor sensorID="s5" sensorType="delusions-sensor" />
+			</SensorList>
+			
+			<!-- Configure AA1 monitor rule -->
+			<Monitor monitorID="m1">
+				<GetSensorData ref_sensor="s1" ref_event="depression-status" />
+				<GetSensorData ref_sensor="s2" ref_event="act-on-voices" />
+				<GetSensorData ref_sensor="s3" ref_event="voice-urge-harm-self-sensor" />
+				<GetSensorData ref_sensor="s4" ref_event="voice-urge-harm-self-others" />
+				<GetSensorData ref_sensor="s5" ref_event="delusions" />
+				
+				<Condition conditionID="c1">
+					<Expression exprID="expr1" ref_event="depression-status"> 
+						<If varName="depression-status" op="==" datavalue="first-diagnosis"> low </If>
+						<If varName="depression-status" op="==" datavalue="single-episode"> medium </If>
+						<If varName="depression-status" op="==" datavalue="repeat-episode"> high </If>
+						<If varName="depression-status" op="==" datavalue="relapse"> critical </If>
+						<If varName="depression-status" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr2" ref_event="act-on-voices"> 
+						<If varName="act-on-voices" op="&gt;=" datavalue="0.5"> likely </If>
+						<If varName="act-on-voices" op="&lt;" datavalue="0.5"> unlikely </If>
+						<If varName="act-on-voices" op="==;" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr3" ref_event="voice-urge-harm-self">
+						<If varName="voice-urge-harm-self" op="&gt;=" datavalue="0.5"> likely </If>
+						<If varName="voice-urge-harm-self" op="&lt;" datavalue="0.5"> unlikely </If>
+						<If varName="voice-urge-harm-self" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr4" ref_event="voice-urge-harm-others">
+						<If varName="voice-urge-harm-others" op="&gt;=" datavalue="0.5"> likely </If>
+						<If varName="voice-urge-harm-others" op="&lt;" datavalue="0.5"> unlikely </If>
+						<If varName="voice-urge-harm-others" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr5" ref_event="delusions">
+						<If varName="delusions" op="&gt;=" datavalue="0.5"> likely </If>
+						<If varName="delusions" op="&lt;" datavalue="0.5"> unlikely </If>
+						<If varName="delusions" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>					
+				</Condition>
+			</Monitor>
+		
+			<!-- Configure AA1 local rie rule -->
+			<LocalRIE rieID="aa-rie1">
+				<GetMonitorData ref_monitor="m1" ref_condition="c1">
+					<GetContextVariable contextID="context1" ref_expression="expr1"/>
+					<GetContextVariable contextID="context2" ref_expression="expr2"/>
+					<GetContextVariable contextID="context3" ref_expression="expr3"/>
+					<GetContextVariable contextID="context4" ref_expression="expr4"/>
+					<GetContextVariable contextID="context5" ref_expression="expr5"/>
+				</GetMonitorData>
+				<Condition conditionID="c2">
+					<Expression exprID="expr1">
+						<and><If varName="depression-status" op="==" datavalue="low" ref_context="context1"> true </If></and>
+						<and><If varName="act-on-voices" op="==" datavalue="likely" ref_context="context2"> true </If></and>
+						<and><If varName="voice-urge-harm-self" op="==" datavalue="unlikely" ref_context="context3"> true </If></and>
+						<and><If varName="voice-urge-harm-others" op="==" datavalue="unlikely" ref_context="context4"> true </If></and>
+						<and><If varName="delusions" op="==" datavalue="likely" ref_context="context5"> true </If></and>
+					</Expression>
+					<Expression exprID="expr2">
+						<and><If varName="depression-stage" op="==" datavalue="medium" ref_context="context1"> true </If></and>
+						<and><If varName="delusions-stage" op="==" datavalue="likely" ref_context="context2"> true </If></and>
+						<and><If varName="hallucinations-stage" op="==" datavalue="likely" ref_context="context3"> true </If></and>
+						<and><If varName="voice-urge-harm-others" op="==" datavalue="unlikely" ref_context="context4"> true </If></and>
+						<and><If varName="delusions" op="==" datavalue="unlikely" ref_context="context5"> true </If></and>
+					</Expression>
+					<Expression exprID="expr3">
+						<and><If varName="depression-stage" op="==" datavalue="high" ref_context="context1"> true </If></and>
+						<and><If varName="delusions-stage" op="==" datavalue="likely" ref_context="context2" > true </If></and>
+						<and><If varName="hallucinations-stage" op="==" datavalue="likely" ref_context="context3"> true </If></and>
+						<and><If varName="voice-urge-harm-others" op="==" datavalue="likely" ref_context="context4"> true </If></and>
+						<and><If varName="delusions" op="==" datavalue="unlikely" ref_context="context5"> true </If></and>
+					</Expression>
+					<Expression exprID="expr4">
+						<and><If varName="depression-stage" op="==" datavalue="critical" ref_context="context1"> true </If></and>
+						<and><If varName="delusions-stage" op="==" datavalue="likely" ref_context="context2" > true </If></and>
+						<and><If varName="hallucinations-stage" op="==" datavalue="likely" ref_context="context3"> true </If></and>
+						<and><If varName="voice-urge-harm-others" op="==" datavalue="likely" ref_context="context4"> true </If></and>
+						<and><If varName="delusions" op="==" datavalue="likely" ref_context="context5"> true </If></and>
+					</Expression>
+				</Condition>
+				
+				<TriggerAction ref_condition="c2">
+					<While condition="expr1 = 'true'">
+						<ActionTemplate actionID="a1" actionType="open-url" category="none" target_resource="resource name"> 
+							galassify-action-open-url-template </ActionTemplate>
+					</While>
+					<While condition="expr2 = 'true'">
+						<ActionTemplate actionID="a2" actionType="send-email" category="none" target_resource="resource name"> 
+							galassify-action-send-email-template </ActionTemplate>
+					</While>
+					<While condition="(expr3 = 'true') and (expr4 = 'true')">
+						<ActionTemplate actionID="a3" actionType="dial-emergency" category="none" target_resource="resource name"> 
+							notify-emergency-template </ActionTemplate>
+					</While>
+				</TriggerAction>
+			</LocalRIE>
+		
+			<!-- Configure AA1 executor rule -->
+			<Executor executorID="exe1">
+				<GetNotification message="yes" ref_sender="globalRIE" >
+					<Execute action="action = 'a1'" ref_command="cmd1">
+						<Function functionID="f1" functionName="sendEmail">
+							<Parameter paramName="id" datavalue="1" />
+							<Parameter paramName="name" datavalue="john" />
+							<Parameter paramName="recepient" datavalue="abc@email.com" />
+							<Parameter paramName="subject" datavalue="a subject line" />
+							<Parameter paramName="textMsg" datavalue="We recommended you to seek help..." />
+							<Parameter paramName="population_restriction" datavalue="older adult" />
+						</Function>
+					</Execute>
+					<Execute action="action = 'a2'" ref_command="cmd1">
+						<Function functionID="f2" functionName="openURL">
+							<Parameter paramName="id" datavalue="1" />
+							<Parameter paramName="name" datavalue="john" />
+							<Parameter paramName="url" datavalue="http://example.com" />
+							<Parameter paramName="textMsg" datavalue="Read the medical giudelines..." />
+							<Parameter paramName="population_restriction" datavalue="older adult" />
+						</Function>
+					</Execute>
+					<Execute action="action = 'a3'" ref_command="cmd1">
+						<Function functionID="f3" functionName="dial-emergency">
+							<Parameter paramName="id" datavalue="1" />
+							<Parameter paramName="dept" datavalue="emergency" />
+							<Parameter paramName="dialNo" datavalue="999" />
+							<Parameter paramName="population_restriction" datavalue="older adult" />
+						</Function>
+					</Execute>
+				</GetNotification>	
+			</Executor>
+		</AA>
+	</AAPolicy>
+	
+	<!-- <!-- Define Events Handle by AA2 Policy --> -->
+	<AAPolicy policyID="p2" policyType="suicide" policyDescription="carer's medium help intervention" ref_aa="aa2">	
+		<ManagedResourceList>
+			<ManagedResource resourceID="mr1" resourceType="suicide-attempt" ref_sensor="s1">
+				<TriggerEvent>
+					<or><Event inputEvent="suicide-attempt" op="="> yes </Event></or>
+					<or><Event inputEvent="suicide-attempt" op="="> no </Event></or>
+					<or><Event inputEvent="suicide-attempt" op="="> dont-know </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr2" resourceType="more-than-one-suicide-attempt" ref_sensor="s2">
+				<TriggerEvent>
+					<or><Event inputEvent="more-than-one" op="="> yes </Event></or>
+					<or><Event inputEvent="more-than-one" op="="> no </Event></or>
+					<or><Event inputEvent="more-than-one" op="="> dont-know </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr3" resourceType="total-suicide-attempt" ref_sensor="s3">
+				<TriggerEvent>
+					<or><Event inputEvent="total-attempt" op="="> 1 </Event></or>
+					<or><Event inputEvent="total-attempt" op="="> 2 </Event></or>
+					<or><Event inputEvent="total-attempt" op="="> 3 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr4" resourceType="suicide-note-left" ref_sensor="s4">
+				<TriggerEvent>
+					<or><Event inputEvent="suicide-note" op="="> yes </Event></or>
+					<or><Event inputEvent="suicide-note" op="="> no </Event></or>
+					<or><Event inputEvent="suicide-note" op="="> dont-know </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr5" resourceType="seriousness" ref_sensor="s5">
+				<TriggerEvent>
+					<or><Event inputEvent="seriousness" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="seriousness" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr6" resourceType="hide-suicide-attempt" ref_sensor="s6">
+				<TriggerEvent>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="hide-suicide-attempt" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+			<ManagedResource resourceID="mr7" resourceType="wanted-to-succeed" ref_sensor="s7">
+				<TriggerEvent>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.0 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.1 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.2 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.3 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.4 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.5 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.6 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.7 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.8 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 0.9 </Event></or>
+					<or><Event inputEvent="wanted-to-succeed" op="="> 1.0 </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+		</ManagedResourceList>
+		
+		<!-- Social network entities may also generate event if action sent to the network -->
+		<SocialNetwork networkID="network1" networkName="grace-care-network">
+			<NetworkResourceList>
+				<NetworkResource resourceID="" resourceType="" ref_sensor="">
+					<TriggerEvent>
+						<or><Event inputEvent="" op="="></Event></or>
+					</TriggerEvent>
+				</NetworkResource>
+			</NetworkResourceList>
+		</SocialNetwork>
+		
+		<!-- Configure AA2 components -->
+		<AA adapterID="aa2" adapterType="suicide-concept-adapter">	
+			<SensorList>
+				<Sensor sensorID="s1" sensorType="suicide-attempt" />
+				<Sensor sensorID="s2" sensorType="more-than-one" />
+				<Sensor sensorID="s3" sensorType="total-attempt" />
+				<Sensor sensorID="s4" sensorType="suicide-note" />
+				<Sensor sensorID="s5" sensorType="seriousness" />
+				<Sensor sensorID="s6" sensorType="hide-suicide-attempt" />
+				<Sensor sensorID="s7" sensorType="wanted-to-succeed" />
+			</SensorList>
+			
+			<!-- Configure AA2 Monitor policy -->
+			<Monitor monitorID="m1">
+				<GetSensorData ref_sensor="s1" ref_event="suicide-attempt" />
+				<GetSensorData ref_sensor="s2" ref_event="more-than-one" />
+				<GetSensorData ref_sensor="s3" ref_event="total-attempt" />
+				<GetSensorData ref_sensor="s4" ref_event="suicide-note" />
+				<GetSensorData ref_sensor="s5" ref_event="seriousness" />
+				<GetSensorData ref_sensor="s6" ref_event="hide-suicide-attempt" />
+				<GetSensorData ref_sensor="s7" ref_event="wanted-to-succeed" />
+				
+				<Condition conditionID="c1">
+					<Expression exprID="expr1" ref_event="suicide-attempt"> 
+						<If varName="suicide-attempt" op="==" datavalue="yes"> likely </If>
+						<If varName="suicide-attempt" op="==" datavalue="no"> unlikely </If>
+						<If varName="suicide-attempt" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr2" ref_event="more-than-one"> 
+						<If varName="more-than-one" op="==" datavalue="yes"> high </If>
+						<If varName="more-than-one" op="==;" datavalue="no"> medium </If>
+						<If varName="more-than-one" op="==;" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr3" ref_event="total-attempt">
+						<If varName="total-attempt" op="&gt;=" datavalue="3"> likely </If>
+						<If varName="total-attempt" op="&lt;" datavalue="3"> unlikely </If>
+						<If varName="total-attempt" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr4" ref_event="suicide-note">
+						<If varName="suicide-note" op="==" datavalue="yes"> unlikely </If>
+						<If varName="suicide-note" op="==" datavalue="no"> likely </If>
+						<If varName="suicide-note" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr5" ref_event="seriousness">
+						<If varName="seriousness" op="&gt;=" datavalue="0.5"> likely </If>
+						<If varName="seriousness" op="&lt;" datavalue="0.5"> harmless </If>
+						<If varName="seriousness" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr6" ref_event="hide-suicide-attempt">
+						<If varName="hide-suicide-attempt" op="&gt;=" datavalue="0.5"> hiding </If>
+						<If varName="hide-suicide-attempt" op="&lt;" datavalue="0.5"> no-hiding </If>
+						<If varName="hide-suicide-attempt" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>
+					<Expression exprID="expr7" ref_event="wanted-to-succeed">
+						<If varName="wanted-to-succeed" op="&gt;=" datavalue="0.5"> desire-succeed </If>
+						<If varName="wanted-to-succeed" op="&lt;" datavalue="0.5"> no-desire </If>
+						<If varName="wanted-to-succeed" op="==" datavalue="dont-know"> unknown </If>
+					</Expression>					
+				</Condition>
+			</Monitor>
+		
+			<!-- Configure AA2 Local RIE policy -->
+			<LocalRIE rieID="aa-rie2">
+				<GetMonitorData ref_monitor="m1" ref_condition="c1">
+					<GetContextVariable contextID="context1" ref_expression="expr1"/>
+					<GetContextVariable contextID="context2" ref_expression="expr2"/>
+					<GetContextVariable contextID="context3" ref_expression="expr3"/>
+					<GetContextVariable contextID="context4" ref_expression="expr4"/>
+					<GetContextVariable contextID="context5" ref_expression="expr5"/>
+					<GetContextVariable contextID="context6" ref_expression="expr5"/>
+					<GetContextVariable contextID="context7" ref_expression="expr5"/>
+				</GetMonitorData>
+				<Condition conditionID="c2">
+					<Expression exprID="expr1">
+						<and><If varName="suicide-attempt" op="==" datavalue="likely" ref_context="context1"> true </If></and>
+						<and><If varName="more-than-one" op="==" datavalue="high" ref_context="context2"> true </If></and>
+						<and><If varName="total-attempt" op="==" datavalue="likely" ref_context="context3"> true </If></and>
+						<and><If varName="suicide-note" op="==" datavalue="unlikely" ref_context="context4"> true </If></and>
+						<and><If varName="seriousness" op="==" datavalue="likely" ref_context="context5"> true </If></and>
+						<and><If varName="hide-suicide-attempt" op="==" datavalue="hiding" ref_context="context6"> true </If></and>
+						<and><If varName="wanted-to-succeed" op="==" datavalue="desire-succeed" ref_context="context7"> true </If></and>
+					</Expression>
+					<Expression exprID="expr2">
+						<and><If varName="suicide-attempt" op="==" datavalue="unlikely" ref_context="context1"> true </If></and>
+						<and><If varName="more-than-one" op="==" datavalue="low" ref_context="context2"> true </If></and>
+						<and><If varName="total-attempt" op="==" datavalue="unlikely" ref_context="context3"> true </If></and>
+						<and><If varName="suicide-note" op="==" datavalue="likely" ref_context="context4"> true </If></and>
+						<and><If varName="seriousness" op="==" datavalue="unlikely" ref_context="context5"> true </If></and>
+						<and><If varName="hide-suicide-attempt" op="==" datavalue="no-hiding" ref_context="context6"> true </If></and>
+						<and><If varName="wanted-to-succeed" op="==" datavalue="no-desire" ref_context="context7"> true </If></and>
+					</Expression>
+				</Condition>
+				
+				<TriggerAction ref_condition="c2">
+					<While condition="expr1 = 'true'">
+						<ActionTemplate actionID="a1" actionType="urgent-support" category="none" target_resource="999"> 
+							galassify-action-urgent-support-template </ActionTemplate>
+					</While>
+					<While condition="expr2 = 'true'">
+						<ActionTemplate actionID="a2" actionType="send-sms" category="none" target_resource="patient-node"> 
+							galassify-action-send-sms-template </ActionTemplate>
+					</While>
+				</TriggerAction>
+			</LocalRIE>
+		
+			<!-- Configure AA2 Executor policy -->
+			<Executor executorID="exe1">
+				<GetNotification message="yes" ref_sender="globalRIE" >
+					<Execute action="action = 'a1'" ref_command="cmd2">
+						<Function functionID="f1" functionName="urgentSupport">
+							<Parameter paramName="id" datavalue="1" />
+							<Parameter paramName="dept" datavalue="emergency" />
+							<Parameter paramName="recepient" datavalue="abc@email.com" />
+							<Parameter paramName="telNO" datavalue="999" />
+							<Parameter paramName="textMsg" datavalue="Need urgent support..." />
+							<Parameter paramName="population_restriction" datavalue="older adult" />
+						</Function>
+					</Execute>
+					<Execute action="action = 'a2'" ref_command="cmd2">
+						<Function functionID="f2" functionName="sendSMS">
+							<Parameter paramName="id" datavalue="1" />
+							<Parameter paramName="name" datavalue="john" />
+							<Parameter paramName="mob" datavalue="077993344" />
+							<Parameter paramName="textMsg" datavalue="Read the medical giudelines..." />
+							<Parameter paramName="population_restriction" datavalue="older adult" />
+						</Function>
+					</Execute>
+				</GetNotification>	
+			</Executor>
+		</AA>
+	</AAPolicy>
+	
+	<!-- Configure Global Policy -->
+	<GlobalPolicy>
+		<GlobalRIE rieID="globalRIE">
+			<ActionList>
+				<!-- Assume that send-email action triggered by AA1 -->
+				<GetAction ref_aa="aa1">
+					<or><Action inputActionID="aa1-action"> a1 </Action></or>
+					<or><Action inputActionID="aa1-action"> a2 </Action></or>
+					<or><Action inputActionID="aa1-action"> a3 </Action></or>
+				</GetAction>
+				<!-- Assume that some actions may triggered by AA2 -->
+				<GetAction ref_aa="aa2">
+					<or><Action inputActionID="aa2-action"> a1 </Action></or>
+					<or><Action inputActionID="aa2-action"> a2 </Action></or>
+				</GetAction>
+			</ActionList>
+			
+			<Condition conditionID="c3">
+				<Expression exprID="expr1">
+					<and><If varName="action" op="==" datavalue="a1" ref_input_action="aa1_action"> true </If></and>
+					<and><If varName="action" op="==" datavalue="a1" ref_input_action="aa2_action"> true </If></and>
+				</Expression>
+				<Expression exprID="expr2">
+					<and><If varName="action" op="==" datavalue="a2" ref_input_action="aa1_action"> true </If></and>
+					<and><If varName="action" op="==" datavalue="a2" ref_input_action="aa2_action"> true </If></and>
+				</Expression>
+				<Expression exprID="expr3">
+					<and><If varName="action" op="==" datavalue="a3" ref_input_action="aa1_action"> true </If></and>
+					<and><If varName="action" op="==" datavalue="a2" ref_input_action="aa2_action"> true </If></and>
+				</Expression>
+			</Condition>
+			<Decision ref_condition="c3" ref_expression="expr1">
+				<Command commandID="cmd1" message="yes" target_adapter="aa1"> a1 </Command>
+				<Command commandID="cmd2" message="yes" target_adapter="aa2"> a1 </Command>
+			</Decision>
+			<Decision ref_condition="c3" ref_expression="expr2">
+				<Command commandID="cmd1" message="yes" target_adapter="aa1"> a2 </Command>
+				<Command commandID="cmd2" message="yes" target_adapter="aa2"> a2 </Command>
+			</Decision>
+			<Decision ref_condition="c3" ref_expression="expr3">
+				<Command commandID="cmd1" message="yes" target_adapter="aa1"> a3 </Command>
+				<Command commandID="cmd2" message="yes" target_adapter="aa2"> a2 </Command>
+			</Decision>
+		</GlobalRIE>
+	</GlobalPolicy>
+</PolicySet>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PolicySet xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
+	<!-- Configure AA1 policy -->
+	<AAPolicy policyID="" policyType="" policyDescription="" ref_aa="">	
+		<ManagedResourceList>
+			<ManagedResource resourceID="" resourceType="" ref_sensor="">
+				<TriggerEvent>
+					<or><Event inputEvent="" op="="> </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+		</ManagedResourceList>
+		
+		<!-- Social network entities may also generate event if action sent to the network -->
+		<SocialNetwork networkID="" networkName="" ref_adapter="">
+			<NetworkResourceList>
+				<NetworkResource resourceID="" resourceType="" ref_sensor="">
+					<TriggerEvent>
+						<or><Event inputEvent="" op="="> </Event></or>
+					</TriggerEvent>
+				</NetworkResource>
+			</NetworkResourceList>
+		</SocialNetwork>
+		
+		<!-- Configure AA1 components -->
+		<AA adapterID="" adapterType="">	
+			<SensorList>
+				<Sensor sensorID="" sensorType="" />
+			</SensorList>
+			
+			<!-- Configure monitor rule -->
+			<Monitor monitorID="">
+				<GetSensorData ref_sensor="" ref_event="" />
+				<Condition conditionID="">
+					<Expression exprID="" ref_event=""> 
+						<If varName="" op="==" threshold=""> </If>
+					</Expression>
+				</Condition>
+			</Monitor>
+		
+			<!-- Configure local rie rule -->
+			<LocalRIE rieID="">
+				<GetMonitorData ref_monitor="" ref_condition="">
+					<GetContextVariable contextID="" ref_expression=""/>
+				</GetMonitorData>
+				<Condition conditionID="">
+					<Expression exprID="">
+						<and><If varName="" op="==" datavalue="" ref_context="" /></and>
+					</Expression>
+				</Condition>
+				
+				<TriggerAction ref_condition="">
+					<While condition="">
+						<ActionTemplate actionID="" actionType="" category="" target_resource=""> </ActionTemplate>
+					</While>
+				</TriggerAction>
+			</LocalRIE>
+		
+			<!-- Configure executor rule -->
+			<Executor executorID="">
+				<GetNotification message="" ref_sender="" >
+					<Execute action="" ref_command="">
+						<Function functionID="" functionName="">
+							<Parameter paramName="" datavalue="" />
+						</Function>
+					</Execute>
+				</GetNotification>	
+			</Executor>
+		</AA>
+	</AAPolicy>
+	
+	<!-- Configure AA2 policy -->
+	<AAPolicy policyID="" policyType="" policyDescription="" ref_aa="">
+	<ManagedResourceList>
+		<ManagedResource resourceID="" resourceType="" ref_sensor="">
+				<TriggerEvent>
+					<or><Event inputEvent="" op="="> </Event></or>
+				</TriggerEvent>
+			</ManagedResource>
+		</ManagedResourceList>
+		
+		<SocialNetwork networkID="" networkName="" ref_adapter="">
+			<NetworkResourceList>
+				<NetworkResource resourceID="" resourceType="" ref_sensor="">
+					<TriggerEvent>
+						<or><Event inputEvent="" op="="> </Event></or>
+					</TriggerEvent>
+				</NetworkResource>
+			</NetworkResourceList>
+		</SocialNetwork>
+		
+		<AA adapterID="" adapterType="">
+		
+		</AA>
+	</AAPolicy>
+	
+	<!-- Configure Global Policy -->
+	<GlobalPolicy>
+		<GlobalRIE rieID="">
+			<ActionList>
+				<!-- Assume that action triggered by AA1 -->
+				<GetAction ref_aa="">
+					<or><Action inputActionID=""> </Action></or>
+				</GetAction>
+				<!-- Assume that some actions may triggered by AA2 -->
+				<GetAction ref_aa="">
+					<or><Action inputActionID=""> </Action></or>
+				</GetAction>
+			</ActionList>
+			
+			<Condition conditionID="">
+				<Expression exprID="">
+					<and><If varName="" op="==" datavalue="" ref_input_action="" /></and>
+					<and><If varName="" op="==" datavalue="" ref_input_action="" /></and>
+				</Expression>
+			</Condition>
+			<Decision ref_condition="" ref_expression="">
+				<Command commandID="" message="" target_adapter=""> </Command>
+			</Decision>
+			<Decision ref_condition="" ref_expression="">
+				<Command commandID="" message="" target_adapter=""> </Command>
+			</Decision>
+		</GlobalRIE>
+	</GlobalPolicy>
+</PolicySet>
